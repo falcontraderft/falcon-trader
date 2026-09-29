@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falcon Trader | Wholesale & Supply Chain</title>
+<meta name="description" content="Falcon Trader — premium wholesale stationery, gift items and China stationery in Urdu Bazar, Lahore.">
+<style>
+:root{--navy:#071a33;--navy2:#0d294c;--gold:#d7ad55;--gold2:#f0d28a;--cream:#f7f4ed;--white:#fff;--text:#182333;--muted:#697586;--line:#e6e0d5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--text)}
+header{background:linear-gradient(135deg,var(--navy),#0b3158);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #0002}
+.nav{max-width:1180px;margin:auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:2px}.brand span{display:block;color:var(--gold2);font-size:11px;letter-spacing:1.4px;margin-top:3px}
+nav a{color:#fff;text-decoration:none;margin-left:22px;font-size:14px}
+.cartbtn{border:1px solid #ffffff55;background:#ffffff12;color:#fff;border-radius:30px;padding:10px 15px;cursor:pointer}
+.hero{background:radial-gradient(circle at 80% 20%,#d7ad5525,transparent 35%),linear-gradient(135deg,var(--navy),#0c355f);color:#fff}
+.hero-inner{max-width:1180px;margin:auto;padding:80px 20px 75px;display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:center}
+.kicker{color:var(--gold2);font-size:13px;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(42px,6vw,72px);line-height:.98;margin:15px 0}.hero p{color:#d9e2ed;max-width:650px;line-height:1.7}
+.btn{display:inline-block;border:0;border-radius:10px;padding:13px 19px;text-decoration:none;font-weight:700;cursor:pointer}.primary{background:var(--gold);color:#111}.secondary{border:1px solid #ffffff55;color:#fff;background:#ffffff10;margin-left:8px}
+.hero-card{border:1px solid #ffffff25;border-radius:22px;padding:30px;background:#ffffff0d;backdrop-filter:blur(8px)}
+.hero-card strong{font-size:30px;display:block}.hero-card small{color:#cbd6e4}
+section{max-width:1180px;margin:auto;padding:60px 20px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section-head h2{margin:0;font-size:32px}.muted{color:var(--muted)}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{padding:22px;border-radius:16px;background:#fff;border:1px solid var(--line);font-weight:700}.cat small{display:block;color:var(--muted);font-weight:400;margin-top:7px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.product{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #10233b08}.pic{height:210px;background:linear-gradient(135deg,#eef1f4,#d9e1e8);display:flex;align-items:center;justify-content:center;color:#6b7888;font-weight:700;letter-spacing:.5px}.product-body{padding:18px}.product h3{margin:0 0 6px}.price{font-weight:800;color:#9a731f;font-size:18px}.product button{width:100%;margin-top:14px;background:var(--navy);color:#fff;border:0;border-radius:10px;padding:12px;cursor:pointer}
+.info{background:var(--navy);color:#fff;border-radius:24px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:25px}.info p{color:#d5dfeb;line-height:1.7}
+footer{background:#06152a;color:#bdc9d6;padding:28px 20px;text-align:center;font-size:13px}
+.drawer{position:fixed;right:-430px;top:0;width:min(430px,100%);height:100%;background:#fff;z-index:30;box-shadow:-10px 0 30px #0002;transition:.25s;padding:22px;overflow:auto}.drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer}.cart-item{border-bottom:1px solid var(--line);padding:15px 0}.qty button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 8px}.checkout{width:100%;padding:14px;border:0;border-radius:10px;background:var(--gold);font-weight:800;cursor:pointer;margin-top:14px}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:40;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#fff;border-radius:20px;padding:25px;max-width:520px;width:100%;max-height:90vh;overflow:auto}.modalbox input,.modalbox select,.modalbox textarea{width:100%;padding:12px;margin:7px 0 12px;border:1px solid var(--line);border-radius:9px;font:inherit}.notice{background:#f7f0df;border:1px solid #ead7a8;padding:12px;border-radius:9px;font-size:13px}
+@media(max-width:800px){nav{display:none}.hero-inner{grid-template-columns:1fr;padding-top:55px}.cats{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}.info{grid-template-columns:1fr}}
+@media(max-width:520px){.products{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.hero h1{font-size:48px}.secondary{margin:8px 0 0 0}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="brand">FALCON TRADER<span>WHOLESALE & SUPPLY CHAIN ASSOCIATES</span></div>
+<nav><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<button class="cartbtn" onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
+</div></header>
+
+<div class="hero"><div class="hero-inner">
+<div><div class="kicker">Urdu Bazar • Lahore</div><h1>Wholesale,<br>made simple.</h1><p>China stationery, fancy items, gifts and everyday wholesale products — presented in one clean online catalog with cart and checkout.</p>
+<a class="btn primary" href="#products">Shop Products</a><button class="btn secondary" onclick="openCart()">View Cart</button></div>
+<div class="hero-card"><small>FALCON TRADER</small><strong>Wholesale Supply</strong><p>Built for dealers, retailers, resellers and trade customers.</p></div>
+</div></div>
+
+<section><div class="section-head"><div><div class="muted">Browse</div><h2>Shop by category</h2></div></div>
+<div class="cats"><div class="cat">China Stationery<small>Markers, pens, calculators & more</small></div><div class="cat">Fancy Items<small>Trendy everyday items</small></div><div class="cat">Gift Items<small>Gift bags, pouches & gifts</small></div><div class="cat">Wholesale Supply<small>For dealers & retailers</small></div></div></section>
+
+<section id="products"><div class="section-head"><div><div class="muted">Featured</div><h2>Popular products</h2></div><div class="muted">Demo catalog — replace with your real products</div></div>
+<div class="products" id="productGrid"></div></section>
+
+<section id="about"><div class="info"><div><div class="kicker">About Falcon Trader</div><h2>Trade with confidence.</h2><p>Falcon Trader is a wholesale business based in Urdu Bazar, Lahore, serving dealers, distributors, retailers and resellers.</p></div><div id="contact"><h3>Business Address</h3><p>Shop #3, Olympic Plaza, Alkareem Market,<br>Urdu Bazar, Lahore, Pakistan</p><p>For wholesale inquiries, use the checkout form or contact your Falcon Trader sales team.</p></div></div></section>
+
+<footer>© 2026 Falcon Trader • Wholesale & Supply Chain Associates</footer>
+
+<aside class="drawer" id="drawer"><div class="drawer-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div><h3>Total: Rs. <span id="cartTotal">0</span></h3><button class="checkout" onclick="openCheckout()">Proceed to Checkout</button></aside>
+
+<div class="modal" id="checkoutModal"><div class="modalbox"><div class="drawer-head"><h2>Checkout</h2><button class="close" onclick="closeCheckout()">×</button></div>
+<form onsubmit="placeOrder(event)">
+<label>Full Name<input required id="name"></label>
+<label>Mobile Number<input required id="phone" type="tel" placeholder="03XX-XXXXXXX"></label>
+<label>City<input required id="city" value="Lahore"></label>
+<label>Delivery Address<textarea required id="address" rows="3"></textarea></label>
+<label>Payment Method<select id="payment"><option>Cash on Delivery</option><option>Online Bank / Wallet Transfer</option></select></label>
+<div class="notice">Online payment gateway can be connected later. For this free version, you can collect transfer/reference details manually.</div>
+<label>Order Note<textarea id="note" rows="2" placeholder="Optional"></textarea></label>
+<button class="checkout" type="submit">Place Order</button>
+</form></div></div>
+
+<div class="modal" id="successModal"><div class="modalbox" style="text-align:center"><h2>Order Received ✓</h2><p id="successText"></p><button class="checkout" onclick="location.reload()">Continue Shopping</button></div></div>
+
+<script>
+const products=[
+{id:1,name:"Fancy Markers",price:250,img:"Fancy Markers"},
+{id:2,name:"Keychains",price:180,img:"Keychains"},
+{id:3,name:"Calculators",price:350,img:"Calculators"},
+{id:4,name:"Gift Bags",price:220,img:"Gift Bags"},
+{id:5,name:"Fancy Pouches",price:300,img:"Fancy Pouches"},
+{id:6,name:"Diaries & Gifts",price:450,img:"Diaries & Gifts"}
+];
+let cart=JSON.parse(localStorage.getItem("ft_cart")||"[]");
+const money=n=>n.toLocaleString("en-PK");
+function renderProducts(){productGrid.innerHTML=products.map(p=>`<article class="product"><div class="pic">${p.img}<br><small>PRODUCT PHOTO</small></div><div class="product-body"><h3>${p.name}</h3><div class="price">Rs. ${money(p.price)}</div><button onclick="add(${p.id})">Add to Cart</button></div></article>`).join("")}
+function add(id){let x=cart.find(i=>i.id===id);x?x.qty++:cart.push({id,qty:1});save();openCart()}
+function save(){localStorage.setItem("ft_cart",JSON.stringify(cart));renderCart()}
+function renderCart(){cartCount.textContent=cart.reduce((s,i)=>s+i.qty,0);cartItems.innerHTML=cart.length?cart.map(i=>{let p=products.find(x=>x.id===i.id);return `<div class="cart-item"><b>${p.name}</b><br>Rs. ${money(p.price)} × ${i.qty}<div class="qty"><button onclick="change(${i.id},-1)">−</button> <button onclick="change(${i.id},1)">+</button> <button onclick="removeItem(${i.id})">Remove</button></div></div>`}).join(""):"<p>Your cart is empty.</p>";cartTotal.textContent=money(cart.reduce((s,i)=>s+products.find(p=>p.id===i.id).price*i.qty,0))}
+function change(id,d){let x=cart.find(i=>i.id===id);if(!x)return;x.qty+=d;if(x.qty<1)cart=cart.filter(i=>i.id!==id);save()}
+function removeItem(id){cart=cart.filter(i=>i.id!==id);save()}
+function openCart(){drawer.classList.add("open");renderCart()}function closeCart(){drawer.classList.remove("open")}
+function openCheckout(){if(!cart.length)return alert("Please add a product first.");closeCart();checkoutModal.classList.add("show")}
+function closeCheckout(){checkoutModal.classList.remove("show")}
+function placeOrder(e){e.preventDefault();let order="FT-"+Date.now().toString().slice(-6);successText.textContent=`Thank you, ${name.value}. Your order ${order} has been received. Our team can contact you at ${phone.value} to confirm delivery and payment details.`;closeCheckout();successModal.classList.add("show");cart=[];save()}
+renderProducts();renderCart();
+</script>
+</body>
+</html>
